@@ -80,10 +80,20 @@ class _PhotosScreenState extends State<PhotosScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundImage: NetworkImage(
-                            photosModel[index].url,
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PhotosScreen(),
+                              ),
+                            );
+                          },
+                          child: CircleAvatar(
+                            radius: 35,
+                            backgroundImage: NetworkImage(
+                              photosModel[index].url,
+                            ),
                           ),
                         ),
                         const SizedBox(
