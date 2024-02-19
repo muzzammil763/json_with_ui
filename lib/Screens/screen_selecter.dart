@@ -22,6 +22,7 @@ class ScreenSelecter extends StatelessWidget {
         child: Column(
           children: [
             Box(
+              boxclr: Colors.green,
               title: 'Posts Screen',
               onTap: () {
                 Navigator.push(
@@ -50,6 +51,7 @@ class ScreenSelecter extends StatelessWidget {
               height: 8,
             ),
             Box(
+              boxclr: Colors.cyan,
               title: 'Albums Screen',
               onTap: () {
                 Navigator.push(
