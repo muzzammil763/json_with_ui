@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:json_with_ui/Screens/posts_screen.dart';
 
 class ScreenSelecter extends StatelessWidget {
   const ScreenSelecter({super.key});
@@ -12,23 +13,23 @@ class ScreenSelecter extends StatelessWidget {
         title: const Text(
           'JSON with UI',
           style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(
-          left: 8,
-          top: 8,
-          right: 8,
-        ),
+        padding: const EdgeInsets.only(left: 8, top: 8, right: 8),
         child: Column(
           children: [
             Box(
               title: 'Posts Screen',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PostsScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),
