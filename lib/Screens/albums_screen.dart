@@ -49,6 +49,125 @@ class _AlbumsScreenState extends State<AlbumsScreen> {
           ),
         ),
       ),
+      body: FutureBuilder(
+        future: getAlbums(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return RefreshIndicator(
+            onRefresh: () async {
+              getAlbums();
+            },
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: albumsModel.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  margin: const EdgeInsets.only(top: 8, left: 8, right: 8),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.blueAccent.withOpacity(0.2),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 24,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                text: 'User ID: ',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.blueAccent[700],
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: '${albumsModel[index].userId}',
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                text: 'ID: ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.blueAccent[700],
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: '${albumsModel[index].id}',
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Colors.blueAccent.withOpacity(0.3),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 16,
+                            ),
+                            child: RichText(
+                              text: TextSpan(
+                                text: 'Title: ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.blueAccent[700],
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: albumsModel[index].title,
+                                    style: const TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 }
