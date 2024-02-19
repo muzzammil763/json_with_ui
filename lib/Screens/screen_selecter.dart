@@ -8,7 +8,6 @@ class ScreenSelecter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         backgroundColor: Colors.blueAccent[700],
         title: const Text(
           'JSON with UI',
