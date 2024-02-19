@@ -173,3 +173,33 @@ class _PhotosScreenState extends State<PhotosScreen> {
     );
   }
 }
+
+class PhotoViewScreen extends StatelessWidget {
+  const PhotoViewScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        backgroundColor: Colors.blueAccent[700],
+        title: const Text(
+          'Photos Screen',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
