@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:json_with_ui/Models/photos_model.dart';
+import 'package:json_with_ui/Screens/photo_details_screen.dart';
 
 class PhotosScreen extends StatefulWidget {
   const PhotosScreen({super.key});
@@ -85,7 +86,8 @@ class _PhotosScreenState extends State<PhotosScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PhotosScreen(),
+                                builder: (context) =>
+                                    const PhotoDetailsScreen(),
                               ),
                             );
                           },

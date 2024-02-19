@@ -18,7 +18,7 @@ class PhotoDetailsScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blueAccent[700],
         title: const Text(
-          'Posts Screen',
+          'Photo Details Screen',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
