@@ -90,6 +90,26 @@ class _UsersScreenState extends State<UsersScreen> {
                             padding: const EdgeInsets.all(32),
                             child: Column(
                               children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: Colors.blueAccent.withOpacity(0.2),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "User Details",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.blueAccent[700],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
                                 RichText(
                                   text: TextSpan(
                                     text: 'ID: ',
@@ -103,6 +123,7 @@ class _UsersScreenState extends State<UsersScreen> {
                                         text: '${usersModel[index].id}',
                                         style: const TextStyle(
                                           color: Colors.black,
+                                          fontWeight: FontWeight.normal,
                                         ),
                                       ),
                                     ],
@@ -121,6 +142,7 @@ class _UsersScreenState extends State<UsersScreen> {
                                         text: usersModel[index].name,
                                         style: const TextStyle(
                                           color: Colors.black,
+                                          fontWeight: FontWeight.normal,
                                         ),
                                       ),
                                     ],
@@ -139,6 +161,7 @@ class _UsersScreenState extends State<UsersScreen> {
                                         text: usersModel[index].username,
                                         style: const TextStyle(
                                           color: Colors.black,
+                                          fontWeight: FontWeight.normal,
                                         ),
                                       ),
                                     ],
@@ -175,19 +198,33 @@ class _UsersScreenState extends State<UsersScreen> {
                                   width: double.infinity,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    color: Colors.blueAccent.withOpacity(0.4),
+                                    color: Colors.blueAccent.withOpacity(0.2),
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(16.0),
                                     child: Column(
                                       children: [
-                                        Text(
-                                          "Address",
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.blueAccent[700],
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            color: Colors.blueAccent
+                                                .withOpacity(0.3),
                                           ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Text(
+                                              "Address",
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.blueAccent[700],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 8,
                                         ),
                                         RichText(
                                           text: TextSpan(
@@ -285,9 +322,6 @@ class _UsersScreenState extends State<UsersScreen> {
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                         ),
-                                        const SizedBox(
-                                          height: 16,
-                                        ),
                                         Container(
                                           margin: const EdgeInsets.all(16),
                                           width: double.infinity,
@@ -295,20 +329,38 @@ class _UsersScreenState extends State<UsersScreen> {
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                             color: Colors.blueAccent
-                                                .withOpacity(0.5),
+                                                .withOpacity(0.3),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(32.0),
+                                            padding: const EdgeInsets.all(16.0),
                                             child: Column(
                                               children: [
-                                                Text(
-                                                  "Geo",
-                                                  style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.bold,
-                                                    color:
-                                                        Colors.blueAccent[700],
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                    color: Colors.blueAccent
+                                                        .withOpacity(0.4),
                                                   ),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            8.0),
+                                                    child: Text(
+                                                      "Geo",
+                                                      style: TextStyle(
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors
+                                                            .blueAccent[700],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(
+                                                  height: 8,
                                                 ),
                                                 RichText(
                                                   text: TextSpan(
