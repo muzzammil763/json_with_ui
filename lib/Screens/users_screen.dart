@@ -72,145 +72,233 @@ class _UsersScreenState extends State<UsersScreen> {
                     borderRadius: BorderRadius.circular(16),
                     color: Colors.blueAccent.withOpacity(0.2),
                   ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                              left: 16, right: 8, top: 16, bottom: 16),
-                          height: 100,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 24,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Colors.blueAccent,
+                            color: Colors.blueAccent.withOpacity(0.3),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(32),
+                            child: Column(
+                              children: [
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'ID: ',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.blueAccent[700],
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: '${usersModel[index].id}',
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Name: ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.blueAccent[700],
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: usersModel[index].name,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Username: ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.blueAccent[700],
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: usersModel[index].username,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: 'Email: ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: Colors.blueAccent[700],
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text:
+                                            usersModel[index].email.toString(),
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: Colors.blueAccent.withOpacity(0.4),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "Address",
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.blueAccent[700],
+                                          ),
+                                        ),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: 'Street: ',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16,
+                                              color: Colors.blueAccent[700],
+                                            ),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                text: usersModel[index]
+                                                    .address
+                                                    .street
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: 'Suite: ',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16,
+                                              color: Colors.blueAccent[700],
+                                            ),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                text: usersModel[index]
+                                                    .address
+                                                    .suite
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: 'City: ',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16,
+                                              color: Colors.blueAccent[700],
+                                            ),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                text: usersModel[index]
+                                                    .address
+                                                    .city
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        RichText(
+                                          text: TextSpan(
+                                            text: 'Zipcode: ',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16,
+                                              color: Colors.blueAccent[700],
+                                            ),
+                                            children: <TextSpan>[
+                                              TextSpan(
+                                                text: usersModel[index]
+                                                    .address
+                                                    .zipcode
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        SizedBox(
+                                          height: 16,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                              left: 8, right: 8, top: 16, bottom: 16),
-                          height: 100,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.blueAccent,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.only(
-                              left: 8, right: 16, top: 16, bottom: 16),
-                          height: 100,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.blueAccent,
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                  // child: Padding(
-                  //   padding: const EdgeInsets.symmetric(
-                  //     horizontal: 20,
-                  //     vertical: 24,
-                  //   ),
-                  //   child: Column(
-                  //     crossAxisAlignment: CrossAxisAlignment.start,
-                  //     children: [
-                  //       Container(
-                  //         color: Colors.amberAccent,
-                  //         child: Padding(
-                  //           padding: const EdgeInsets.all(16),
-                  //           child: Column(
-                  //             children: [
-                  //               RichText(
-                  //                 text: TextSpan(
-                  //                   text: 'ID: ',
-                  //                   style: TextStyle(
-                  //                     fontSize: 16,
-                  //                     fontWeight: FontWeight.bold,
-                  //                     color: Colors.blueAccent[700],
-                  //                   ),
-                  //                   children: <TextSpan>[
-                  //                     TextSpan(
-                  //                       text: '${usersModel[index].id}',
-                  //                       style: const TextStyle(
-                  //                         color: Colors.black,
-                  //                       ),
-                  //                     ),
-                  //                   ],
-                  //                 ),
-                  //               ),
-                  //               RichText(
-                  //                 text: TextSpan(
-                  //                   text: 'Name: ',
-                  //                   style: TextStyle(
-                  //                     fontWeight: FontWeight.bold,
-                  //                     fontSize: 16,
-                  //                     color: Colors.blueAccent[700],
-                  //                   ),
-                  //                   children: <TextSpan>[
-                  //                     TextSpan(
-                  //                       text: usersModel[index].name,
-                  //                       style: const TextStyle(
-                  //                         color: Colors.black,
-                  //                       ),
-                  //                     ),
-                  //                   ],
-                  //                 ),
-                  //               ),
-                  //               RichText(
-                  //                 text: TextSpan(
-                  //                   text: 'Username: ',
-                  //                   style: TextStyle(
-                  //                     fontWeight: FontWeight.bold,
-                  //                     fontSize: 16,
-                  //                     color: Colors.blueAccent[700],
-                  //                   ),
-                  //                   children: <TextSpan>[
-                  //                     TextSpan(
-                  //                       text: usersModel[index].username,
-                  //                       style: const TextStyle(
-                  //                         color: Colors.black,
-                  //                       ),
-                  //                     ),
-                  //                   ],
-                  //                 ),
-                  //                 overflow: TextOverflow.ellipsis,
-                  //                 maxLines: 1,
-                  //               ),
-                  //               RichText(
-                  //                 text: TextSpan(
-                  //                   text: 'Email: ',
-                  //                   style: TextStyle(
-                  //                     fontWeight: FontWeight.bold,
-                  //                     fontSize: 16,
-                  //                     color: Colors.blueAccent[700],
-                  //                   ),
-                  //                   children: <TextSpan>[
-                  //                     TextSpan(
-                  //                       text:
-                  //                           usersModel[index].email.toString(),
-                  //                       style: const TextStyle(
-                  //                         color: Colors.black,
-                  //                         fontWeight: FontWeight.normal,
-                  //                       ),
-                  //                     ),
-                  //                   ],
-                  //                 ),
-                  //                 maxLines: 2,
-                  //                 overflow: TextOverflow.ellipsis,
-                  //               ),
-                  //             ],
-                  //           ),
-                  //         ),
-                  //       )
-                  //     ],
-                  //   ),
-                  // ),
                 );
               },
             ),
