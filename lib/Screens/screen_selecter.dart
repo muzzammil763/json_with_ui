@@ -71,7 +71,8 @@ class ScreenSelecter extends StatelessWidget {
                   height: 8,
                 ),
                 Box(
-                  boxclr: Colors.blue,
+                  boxclr: Colors.amberAccent,
+                  textclr: Colors.black,
                   title: 'Photos Screen',
                   onTap: () {
                     Navigator.push(
@@ -86,8 +87,9 @@ class ScreenSelecter extends StatelessWidget {
                   height: 8,
                 ),
                 Box(
-                  boxclr: Colors.blue,
+                  boxclr: Colors.lightGreenAccent,
                   title: 'Todos Screen',
+                  textclr: Colors.black,
                   onTap: () {
                     Navigator.push(
                       context,
@@ -101,8 +103,9 @@ class ScreenSelecter extends StatelessWidget {
                   height: 8,
                 ),
                 Box(
-                  boxclr: Colors.blue,
+                  boxclr: Colors.orange,
                   title: 'Users Screen',
+                  textclr: Colors.black,
                   onTap: () {
                     Navigator.push(
                       context,
@@ -153,7 +156,7 @@ class Box extends StatelessWidget {
             title,
             style: TextStyle(
               color: textclr ?? Colors.white,
-              fontSize: 17,
+              fontSize: 16,
               fontWeight: FontWeight.bold,
             ),
           ),
