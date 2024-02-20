@@ -297,6 +297,80 @@ class _UsersScreenState extends State<UsersScreen> {
                                             color: Colors.blueAccent
                                                 .withOpacity(0.5),
                                           ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(32.0),
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  "Geo",
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.bold,
+                                                    color:
+                                                        Colors.blueAccent[700],
+                                                  ),
+                                                ),
+                                                RichText(
+                                                  text: TextSpan(
+                                                    text: 'Latitude: ',
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16,
+                                                      color: Colors
+                                                          .blueAccent[700],
+                                                    ),
+                                                    children: <TextSpan>[
+                                                      TextSpan(
+                                                        text: usersModel[index]
+                                                            .address
+                                                            .geo
+                                                            .lat
+                                                            .toString(),
+                                                        style: const TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                ),
+                                                RichText(
+                                                  text: TextSpan(
+                                                    text: 'Longitude: ',
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 16,
+                                                      color: Colors
+                                                          .blueAccent[700],
+                                                    ),
+                                                    children: <TextSpan>[
+                                                      TextSpan(
+                                                        text: usersModel[index]
+                                                            .address
+                                                            .geo
+                                                            .lng
+                                                            .toString(),
+                                                        style: const TextStyle(
+                                                          color: Colors.black,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
                                       ],
                                     ),
