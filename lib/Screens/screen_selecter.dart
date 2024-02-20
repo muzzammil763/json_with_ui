@@ -3,6 +3,7 @@ import 'package:json_with_ui/Screens/albums_screen.dart';
 import 'package:json_with_ui/Screens/comments_screen.dart';
 import 'package:json_with_ui/Screens/photos_screen.dart';
 import 'package:json_with_ui/Screens/posts_screen.dart';
+import 'package:json_with_ui/Screens/todos_screen.dart';
 
 class ScreenSelecter extends StatelessWidget {
   const ScreenSelecter({super.key});
@@ -74,6 +75,21 @@ class ScreenSelecter extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const PhotosScreen(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Box(
+              boxclr: Colors.blue,
+              title: 'Todos Screen',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TodosScreen(),
                   ),
                 );
               },
