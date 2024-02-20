@@ -285,8 +285,18 @@ class _UsersScreenState extends State<UsersScreen> {
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 16,
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.all(16),
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            color: Colors.blueAccent
+                                                .withOpacity(0.5),
+                                          ),
                                         ),
                                       ],
                                     ),
