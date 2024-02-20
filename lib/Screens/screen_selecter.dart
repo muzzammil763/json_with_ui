@@ -4,6 +4,7 @@ import 'package:json_with_ui/Screens/comments_screen.dart';
 import 'package:json_with_ui/Screens/photos_screen.dart';
 import 'package:json_with_ui/Screens/posts_screen.dart';
 import 'package:json_with_ui/Screens/todos_screen.dart';
+import 'package:json_with_ui/Screens/users_screen.dart';
 
 class ScreenSelecter extends StatelessWidget {
   const ScreenSelecter({super.key});
@@ -21,78 +22,97 @@ class ScreenSelecter extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 8, top: 8, right: 8),
-        child: Column(
+        child: ListView(
           children: [
-            Box(
-              boxclr: Colors.green,
-              title: 'Posts Screen',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const PostsScreen(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Box(
-              title: 'Comments Screen',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CommentsScreen(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Box(
-              boxclr: Colors.cyan,
-              title: 'Albums Screen',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AlbumsScreen(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Box(
-              boxclr: Colors.blue,
-              title: 'Photos Screen',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const PhotosScreen(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Box(
-              boxclr: Colors.blue,
-              title: 'Todos Screen',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const TodosScreen(),
-                  ),
-                );
-              },
+            Column(
+              children: [
+                Box(
+                  boxclr: Colors.green,
+                  title: 'Posts Screen',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PostsScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Box(
+                  title: 'Comments Screen',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CommentsScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Box(
+                  boxclr: Colors.cyan,
+                  title: 'Albums Screen',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AlbumsScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Box(
+                  boxclr: Colors.blue,
+                  title: 'Photos Screen',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PhotosScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Box(
+                  boxclr: Colors.blue,
+                  title: 'Todos Screen',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TodosScreen(),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Box(
+                  boxclr: Colors.blue,
+                  title: 'Users Screen',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const UsersScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
